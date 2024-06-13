@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cypress": "^13.11.0"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1"
+  }
+}
