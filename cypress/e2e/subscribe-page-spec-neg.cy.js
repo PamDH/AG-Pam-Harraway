@@ -1,7 +1,7 @@
+import NavigationPage from "../page_objects/navigation.page.js";
 import SubscribeInfoPage from "../page_objects/subscribe.info.page.js";
 
-let user 
-let error
+let user, error
 
 describe('Complete Subscribe Form Negative Test Functionality', () => {
     before(() => {
@@ -15,7 +15,8 @@ describe('Complete Subscribe Form Negative Test Functionality', () => {
     })
 
     beforeEach(() => {
-        cy.visit('https://insights.jahnelgroup.com/subscribe');
+        cy.visit('/');
+        NavigationPage.footerSubscribeLink.click();
     })
 
     it('Should not submit Subscribe form without filling in credentials', () => {

@@ -25,8 +25,8 @@ describe('Media Menu Navigation Functionality', () => {
         cy.contains('Empower your development');
     })
 
-    //it('Should Redirect to Subscribe web page - opens in a new window', () => {
-        // NavigationPage.footerSubscribeLink.should('be.visible').click()
-        // cy.contains('Stay informed');
-    //})
+    it('Should Redirect to Subscribe web page', () => {
+        NavigationPage.footerSubscribeLink.should('be.visible').click()
+        cy.contains('Stay informed');
+    })
 })
