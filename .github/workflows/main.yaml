@@ -5,12 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     name: E2E on Chrome
     steps:
-      - name: Upload screenshots
-        uses: actions/upload-artifact@latest
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
       - name: Checkout
         uses: actions/checkout@v4
       - name: Clear Cache
@@ -23,3 +17,9 @@ jobs:
         with:
           browser: chrome
           working-directory: .
+      - name: Upload screenshots
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
