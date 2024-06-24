@@ -16,7 +16,8 @@ describe('Complete Subscribe Form Negative Test Functionality', () => {
 
     beforeEach(() => {
         cy.visit('/');
-        NavigationPage.footerSubscribeLink.click();
+        NavigationPage.footerSubscribeLink.should('be.visible').click(); 
+        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
     })
 
     it('Should not submit Subscribe form without filling in credentials', () => {

@@ -15,7 +15,8 @@ describe('Subscribe Page Functionality', () => {
     })
 
     it('Should subscribe to Newsletter', () => {
-        NavigationPage.footerSubscribeLink.click();
+        NavigationPage.footerSubscribeLink.should('be.visible').click(); 
+        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
         SubscribeInfoPage.enterSubscribeInfo(user.email, user.firstName, user.lastName, user.company, user.city, user.state, user.phone);
         SubscribeInfoPage.selectCheckBox.click();
         SubscribeInfoPage.setCheckBox;
