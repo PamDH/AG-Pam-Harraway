@@ -26,7 +26,8 @@ describe('Media Menu Navigation Functionality', () => {
     })
 
     it('Should Redirect to Subscribe web page', () => {
-        NavigationPage.footerSubscribeLink.should('be.visible').click()
+        NavigationPage.footerSubscribeLink.should('be.visible').click();
         cy.contains('Stay informed');
+        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
     })
 })

@@ -16,31 +16,39 @@ describe('Complete Subscribe Form Negative Test Functionality', () => {
 
     beforeEach(() => {
         cy.visit('/');
-        NavigationPage.footerSubscribeLink.should('be.visible').click(); 
-        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
     })
 
     it('Should not submit Subscribe form without filling in credentials', () => {
+        NavigationPage.footerSubscribeLink.should('be.visible').click(); 
+        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
         SubscribeInfoPage.submitButton.click();
         cy.contains(error.allRequiredFields);
     })
 
     it('Should not submit Subscribe form with invalid email', () => {
+        NavigationPage.footerSubscribeLink.should('be.visible').click(); 
+        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
         SubscribeInfoPage.enterSubscribeInfo(user.invalidEmail, user.firstName, user.lastName,  user.company, user.city, user.state, user.phone);
         cy.contains(error.emailFormatting);    
     })
 
     it('Should not submit Subscribe form with blank first name', () => {
+        NavigationPage.footerSubscribeLink.should('be.visible').click(); 
+        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
         SubscribeInfoPage.enterSubscribeInfo(user.email, user.blankFirstName, user.lastName,  user.company, user.city, user.state, user.phone);
         cy.contains(error.thisRequiredField); 
     })    
 
     it('Should not submit Subscribe form with blank last name', () => {
+        NavigationPage.footerSubscribeLink.should('be.visible').click(); 
+        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
         SubscribeInfoPage.enterSubscribeInfo(user.email, user.firstName, user.blankLastName,  user.company, user.city, user.state, user.phone);
         cy.contains(error.thisRequiredField); 
     })    
 
     it('Should not submit Subscribe form with empty check box', () => {
+        NavigationPage.footerSubscribeLink.should('be.visible').click(); 
+        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
         SubscribeInfoPage.enterSubscribeInfo(user.email, user.firstName, user.lastName,  user.company, user.city, user.state, user.phone);
         SubscribeInfoPage.submitButton.click();
         cy.contains(error.thisRequiredField); 
