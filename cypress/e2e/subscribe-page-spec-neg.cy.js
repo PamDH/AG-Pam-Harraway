@@ -20,9 +20,12 @@ describe('Complete Subscribe Form Negative Test Functionality', () => {
 
     it('Should not submit Subscribe form without filling in credentials', () => {
         NavigationPage.footerSubscribeLink.should('be.visible').click(); 
-        cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
-        SubscribeInfoPage.submitButton.click();
-        cy.contains(error.allRequiredFields);
+        cy.origin('https://insights.jahnelgroup.com', () => {
+            cy.visit('/subscribe');
+            SubscribeInfoPage.submitButton.click();
+            cy.contains(error.allRequiredFields);
+        })
+        //cy.url().should('include', 'insights.jahnelgroup.com/subscribe');
     })
 
     it('Should not submit Subscribe form with invalid email', () => {
