@@ -18,7 +18,7 @@ describe('Complete Subscribe Form Negative Test Functionality', () => {
         cy.visit('/')
     })
 
-    it.only('Should not submit Subscribe form without filling in credentials', () => {
+    it('Should not submit Subscribe form without filling in credentials', () => {
         NavigationPage.footerSubscribeLink.should('be.visible').click(); 
 <<<<<<< HEAD
         cy.contains('Stay informed');
