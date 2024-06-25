@@ -1,5 +1,7 @@
 {
     "emailFormatting": "Email must be formatted correctly",
     "allRequiredFields": "Please complete all required fields",
-    "thisRequiredField": "Please complete this required field"
+    "thisRequiredField": "Please complete this required field",
+    "fillOutThisField": "Please fill out this field.",
+    "incompletePart": "Please enter a part following '@'. '1@' is incomplete."
 }

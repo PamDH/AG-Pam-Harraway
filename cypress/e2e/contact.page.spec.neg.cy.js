@@ -21,13 +21,13 @@ describe('Complete Contact Us Form - Negative Test Functionality', () => {
         ContactPage.contactLink.click();
         ContactPage.enterContactInfo(user.company, user.firstName, user.lastName, user.phone, user.blankEmail);
         ContactPage.contactButton.click();
-        ContactPage.checkForBlankEmail;
+        ContactPage.checkEmailValidationMessage(error.fillOutThisField);
     })
 
     it('Should not submit form with invalid email', () => {
         ContactPage.contactLink.click();
         ContactPage.enterContactInfo(user.company, user.firstName, user.lastName, user.phone, user.invalidEmail);
         ContactPage.contactButton.click();
-        ContactPage.checkForInvalidEmail;
+        ContactPage.checkEmailValidationMessage(error.incompletePart);
     })
 })
