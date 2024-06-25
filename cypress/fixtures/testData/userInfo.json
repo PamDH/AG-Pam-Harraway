@@ -4,6 +4,7 @@
     "lastName": "Harraway",
     "blankLastName": " ",
     "email": "pdharraway@gmail.com",
+    "blankEmail": " ",
     "invalidEmail": "1@",
     "phone": "4043954855",
     "company": "WhatACompany",
