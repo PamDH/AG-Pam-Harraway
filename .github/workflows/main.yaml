@@ -1,9 +1,10 @@
 name: E2E on Chrome
-on: push
-workflow_dispatch:  # Allows manual trigger from the GitHub Actions tab
-  pull_request:  # Triggers the workflow on pull request events
+on: 
+  push:
+  workflow_dispatch:   
+  pull_request:   
     types: [opened, reopened, edited, synchronize]
-    
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
