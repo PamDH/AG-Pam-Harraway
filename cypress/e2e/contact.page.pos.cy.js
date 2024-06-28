@@ -2,7 +2,7 @@ import ContactPage from "../page_objects/contact.page.js";
 
 let user
 
-describe('Complete Contact Us Form - Positive Test Functionality', () => {
+describe('Complete Contact Us Form - Positive Test', () => {
     before(() => {
         cy.fixture("testData/userInfo.json").then((data) => {
             user = data;

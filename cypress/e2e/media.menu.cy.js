@@ -1,6 +1,6 @@
 import NavigationPage from "../page_objects/navigation.page.js"; 
 
-describe('Media Menu Navigation Functionality', () => {
+describe('Media Menu Navigation', () => {
     beforeEach(() => {
         cy.visit('/')
     })

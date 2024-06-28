@@ -1,6 +1,6 @@
 import NavigationPage from "../page_objects/navigation.page.js"; 
 
-describe('Company Menu Navigation Functionality', () => {
+describe('Company Menu Navigation', () => {
     beforeEach(() => {
         cy.visit('/')
     })

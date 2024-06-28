@@ -1,6 +1,6 @@
 import NavigationPage from "../page_objects/navigation.page.js"; 
 
-describe('Main Menu Navigation Functionality', () => {
+describe('Main Menu Navigation', () => {
     beforeEach(() => {
         cy.visit('/')
     })

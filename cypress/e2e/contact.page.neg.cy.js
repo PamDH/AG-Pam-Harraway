@@ -2,7 +2,7 @@ import ContactPage from "../page_objects/contact.page.js";
 
 let user, error
 
-describe('Complete Contact Us Form - Negative Test Functionality', () => {
+describe('Complete Contact Us Form - Negative Test', () => {
     before(() => {
         cy.fixture("testData/userInfo.json").then((data) => {
             user = data;
@@ -19,7 +19,7 @@ describe('Complete Contact Us Form - Negative Test Functionality', () => {
 
     it('Should not submit form with blank email', () => {
         ContactPage.contactLink.click();
-        ContactPage.enterContactInfo(user.company, user.firstName, user.lastName, user.phone, user.blankEmail);
+        ContactPage.enterContactInfo(user.company, user.firstName, user.lastName, user.phone, ' ');
         ContactPage.contactButton.click();
         ContactPage.checkEmailValidationMessage(error.fillOutThisField);
     })

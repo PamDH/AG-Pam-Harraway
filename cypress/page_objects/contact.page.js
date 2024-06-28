@@ -7,6 +7,7 @@ class ContactPage {
     get contactLink() { return cy.get('.nav-link[href="contact.html"]') };
     get letsTalkButton() { return cy.contains('.jg-btn-contact', "Let's Talk") };
     get contactButton() { return cy.get('[type="submit"]') };
+    get invalidEmail() { return cy.get('#emailInput:invalid') };
  
     enterContactInfo(company, firstName, lastName, phone, email) {
         this.companyInput.type(company).should('be.visible');
@@ -17,7 +18,7 @@ class ContactPage {
     }
 
     checkEmailValidationMessage(expectedMessage) {
-        cy.get('#emailInput:invalid').invoke('prop', 'validationMessage').should('equal', expectedMessage);
+        this.invalidEmail.invoke('prop', 'validationMessage').should('equal', expectedMessage);
     }
 }
 export default new ContactPage();
