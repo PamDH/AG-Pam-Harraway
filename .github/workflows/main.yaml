@@ -1,6 +1,5 @@
 name: E2E on Chrome
 on: 
-  push:
   workflow_dispatch:   
   pull_request:   
     types: [opened, reopened, edited, synchronize]
@@ -27,4 +26,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: cypress/screenshotsq
